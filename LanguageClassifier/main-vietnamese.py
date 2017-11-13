@@ -1,12 +1,12 @@
 import sys
 import pickle
-from readers.text_reader import read_sentences_from_file_for_train
-from readers.text_reader import read_sentences_from_file_for_test
+from readers.excel_reader import read_sentences_from_file_for_train
+from readers.excel_reader import read_sentences_from_file_for_test
 
 mode = sys.argv[1]
 
 if mode == "train":
-    classifier = read_sentences_from_file_for_train(sys.argv[2], "data/stopwords/english-stopwords.txt")
+    classifier = read_sentences_from_file_for_train(sys.argv[2], "data/stopwords/vietnamese-stopwords.txt")
 
     with open(sys.argv[3], 'wb') as output:
         pickle.dump(classifier, output, pickle.HIGHEST_PROTOCOL)
